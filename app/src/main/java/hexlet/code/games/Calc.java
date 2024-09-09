@@ -11,6 +11,7 @@ public class Calc {
 
         Cli.greeting();
 
+        System.out.println("What is the result of the expression?");
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
             int firstNum = Util.makeRandomNumber(100), secondNum = Util.makeRandomNumber(100), operator = Util.makeRandomNumber(3);
             switch (operator) {
