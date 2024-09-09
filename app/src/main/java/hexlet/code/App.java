@@ -9,6 +9,8 @@ public class App {
 
     private static final int EVEN = 2;
 
+    private static final int CALC = 3;
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +26,10 @@ public class App {
                 Cli.greeting();
                 break;
             case EVEN:
-                Even.even();
+                Even.evenGame();
+                break;
+            case CALC:
+
         }
     }
 }
