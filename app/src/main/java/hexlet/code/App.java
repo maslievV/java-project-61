@@ -11,6 +11,8 @@ public class App {
 
     private static final int CALC = 3;
 
+    private static final int GCD = 4;
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -19,6 +21,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
                 0 - Exit""");
         int gameChoice = scanner.nextInt();
         System.out.println("Your choice: " + gameChoice + "\n");
@@ -31,6 +34,9 @@ public class App {
                 break;
             case CALC:
                 Calc.calcGame();
+                break;
+            case GCD:
+                gcd.gcdGame();
         }
     }
 }
