@@ -9,12 +9,10 @@ public class Engine {
     public static void gameEngine(String[] userQuestions, String[] rightAnswers) {
         Scanner scanner = new Scanner(System.in);
         int count = 0;
-
         for (int i = 0; i < NUMBEROFQUESTIONS; i++) {
             System.out.println("Question: " + userQuestions[i]);
             System.out.print("Your answer: ");
             String response = scanner.nextLine();
-
             if (rightAnswers[i].equals(response)) {
                 System.out.println("Correct!");
                 count++;
