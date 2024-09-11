@@ -11,8 +11,8 @@ public class Gcd {
         String[] correctAnswers = new String[Engine.getNUMBEROFQUESTIONS()];
 
         Cli.greeting();
-
         System.out.println("Find the greatest common divisor of given numbers.");
+
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
             int firstNum = Engine.makeRandomNumber(100);
             int secondNum = Engine.makeRandomNumber(100);
