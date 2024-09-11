@@ -19,7 +19,7 @@ public class Engine {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
-                    System.out.println("Congratulations, " + Cli.getUserName());
+                    System.out.println("Congratulations, " + Cli.getUserName() + "!");
                 }
             } else {
                 System.out.println(response + " is wrong answer ;(. Correct answer was " + rightAnswers[i]);
