@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Engine;
-import hexlet.code.Util;
 
 public class Progression {
 
@@ -17,10 +16,11 @@ public class Progression {
         System.out.println("What number is missing in the progression? ");
 
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int beginning = Util.makeRandomNumber(100), step = Util.makeRandomNumber(10);
+            int beginning = Engine.makeRandomNumber(100);
+            int step = Engine.makeRandomNumber(10);
             String[] numbers = makeProgression(beginning, step, ARRAY_LENGTH);
 
-            int randomIndex = Util.makeRandomNumber(numbers.length);
+            int randomIndex = Engine.makeRandomNumber(numbers.length);
             String missedNumber = numbers[randomIndex];
             numbers[randomIndex] = "..";
 
@@ -36,7 +36,7 @@ public class Progression {
         String[] arrayNum = new String[arrayLength];
         arrayNum[0] = String.valueOf(start);
 
-        for(int i = 1; i < arrayLength; i++) {
+        for (int i = 1; i < arrayLength; i++) {
             arrayNum[i] = String.valueOf(start + n);
             start = start + n;
         }

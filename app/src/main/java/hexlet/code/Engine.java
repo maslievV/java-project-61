@@ -13,7 +13,7 @@ public class Engine {
             System.out.println("Question: " + userQuestions[i]);
             System.out.print("Your answer: ");
             String response = scanner.nextLine();
-            if(rightAnswers[i].equals(response)) {
+            if (rightAnswers[i].equals(response)) {
                 System.out.println("Correct!");
                 count++;
                 if (count == 3) {
@@ -24,6 +24,9 @@ public class Engine {
                 break;
             }
         }
+    }
+    public static int makeRandomNumber(int num) {
+        return (int) (Math.random() * num);
     }
 
     public static int getNUMBEROFQUESTIONS() {

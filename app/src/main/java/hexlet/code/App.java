@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import  hexlet.code.games.*;
+import  hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 
@@ -41,7 +45,7 @@ public class App {
                 Calc.calcGame();
                 break;
             case GCD:
-                gcd.gcdGame();
+                Gcd.gcdGame();
                 break;
             case PROGRESSION:
                 Progression.progressionGame();
@@ -49,6 +53,8 @@ public class App {
             case PRIME:
                 Prime.primeGame();
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value " + gameChoice);
         }
     }
 }

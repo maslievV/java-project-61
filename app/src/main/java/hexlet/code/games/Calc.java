@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Util;
 import hexlet.code.Cli;
 
 public class Calc {
@@ -13,7 +12,9 @@ public class Calc {
 
         System.out.println("What is the result of the expression?");
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int firstNum = Util.makeRandomNumber(100), secondNum = Util.makeRandomNumber(100), operator = Util.makeRandomNumber(3);
+            int firstNum = Engine.makeRandomNumber(100);
+            int secondNum = Engine.makeRandomNumber(100);
+            int operator = Engine.makeRandomNumber(3);
             switch (operator) {
                 case 0:
                     userQuestions[i] = String.valueOf(firstNum + " + " + secondNum);

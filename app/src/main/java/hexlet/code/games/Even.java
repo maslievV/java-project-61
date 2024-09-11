@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Util;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
 
@@ -12,7 +11,7 @@ public class Even {
         String[] userQuestions = new String[Engine.getNUMBEROFQUESTIONS()];
 
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int random = Util.makeRandomNumber(100);
+            int random = Engine.makeRandomNumber(100);
             userQuestions[i] = String.valueOf(random);
             correctAnswers[i] = checkEven(random);
         }
