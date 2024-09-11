@@ -15,6 +15,8 @@ public class App {
 
     private static final int PROGRESSION = 5;
 
+    private static final int PRIME = 6;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("""
@@ -24,6 +26,7 @@ public class App {
                 3 - Calc
                 4 - GCD
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
         int gameChoice = scanner.nextInt();
         System.out.println("Your choice: " + gameChoice + "\n");
@@ -42,6 +45,9 @@ public class App {
                 break;
             case PROGRESSION:
                 Progression.progressionGame();
+                break;
+            case PRIME:
+                Prime.primeGame();
                 break;
         }
     }

@@ -3,7 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+
     private static final int NUMBEROFQUESTIONS = 3;
+
     public static void gameEngine(String[] userQuestions, String[] rightAnswers) {
         Scanner scanner = new Scanner(System.in);
         int count = 0;

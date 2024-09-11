@@ -6,7 +6,7 @@ import hexlet.code.Util;
 
 public class Progression {
 
-    public static final int ARRAY_LENGTH = 10;
+    private static final int ARRAY_LENGTH = 10;
 
     public static void progressionGame() {
 
