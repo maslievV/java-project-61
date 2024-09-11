@@ -9,12 +9,13 @@ public class Calc {
         String[] correctAnswers = new String[Engine.getNUMBEROFQUESTIONS()];
 
         Cli.greeting();
-
         System.out.println("What is the result of the expression?");
+
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
             int firstNum = Engine.makeRandomNumber(100);
             int secondNum = Engine.makeRandomNumber(100);
             int operator = Engine.makeRandomNumber(3);
+
             switch (operator) {
                 case 0:
                     userQuestions[i] = String.valueOf(firstNum + " + " + secondNum);
