@@ -23,6 +23,7 @@ public class Engine {
                 }
             } else {
                 System.out.println(response + " is wrong answer ;(. Correct answer was " + rightAnswers[i]);
+                System.out.println("Let's try again " + Cli.getUserName() + "!");
                 break;
             }
         }
