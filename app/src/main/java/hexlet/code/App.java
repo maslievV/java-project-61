@@ -13,6 +13,7 @@ public class App {
 
     private static final int GCD = 4;
 
+    private static final int PROGRESSION = 5;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -22,6 +23,7 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
                 0 - Exit""");
         int gameChoice = scanner.nextInt();
         System.out.println("Your choice: " + gameChoice + "\n");
@@ -37,6 +39,10 @@ public class App {
                 break;
             case GCD:
                 gcd.gcdGame();
+                break;
+            case PROGRESSION:
+                Progression.progressionGame();
+                break;
         }
     }
 }
