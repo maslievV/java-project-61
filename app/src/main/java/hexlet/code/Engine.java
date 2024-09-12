@@ -22,8 +22,8 @@ public class Engine {
                     System.out.println("Congratulations, " + Cli.getUserName() + "!");
                 }
             } else {
-                System.out.println(" " + response + " " + " is wrong answer ;(. Correct answer was " + rightAnswers[i] + ".");
-                System.out.print("Let's try again " + Cli.getUserName() + "!");
+                System.out.println("'" + response + "'" + " is wrong answer ;(. Correct answer was " + "'" + rightAnswers[i] + "'.");
+                System.out.print("Let's try again, " + Cli.getUserName() + "!");
                 break;
             }
         }
