@@ -19,7 +19,7 @@ public class Engine {
             if (rightAnswers[i].equals(response)) {
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == NUMBEROFQUESTIONS) {
                     System.out.println("Congratulations, " + Cli.getUserName() + "!");
                 }
             } else {
