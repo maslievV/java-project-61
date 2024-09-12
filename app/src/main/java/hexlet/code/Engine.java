@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Engine {
 
     private static final int NUMBEROFQUESTIONS = 3;
+    private static final int RANDOMSIZE = 100;
 
     public static void gameEngine(String[] userQuestions, String[] rightAnswers) {
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +23,9 @@ public class Engine {
                     System.out.println("Congratulations, " + Cli.getUserName() + "!");
                 }
             } else {
-                System.out.println("'" + response + "'" + " is wrong answer ;(. Correct answer was " + "'" + rightAnswers[i] + "'.");
+                System.out.println("'"
+                        + response + "'" + " is wrong answer ;(. Correct answer was " + "'"
+                        + rightAnswers[i] + "'.");
                 System.out.print("Let's try again, " + Cli.getUserName() + "!");
                 break;
             }
@@ -34,6 +37,9 @@ public class Engine {
 
     public static int getNUMBEROFQUESTIONS() {
         return NUMBEROFQUESTIONS;
+    }
+    public static int getRandomsize() {
+        return RANDOMSIZE;
     }
 
 }

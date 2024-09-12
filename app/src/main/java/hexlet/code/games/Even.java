@@ -14,7 +14,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int random = Engine.makeRandomNumber(100);
+            int random = Engine.makeRandomNumber(Engine.getRandomsize());
 
             userQuestions[i] = String.valueOf(random);
             correctAnswers[i] = checkEven(random);

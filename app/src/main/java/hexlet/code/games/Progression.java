@@ -6,6 +6,7 @@ import hexlet.code.Engine;
 public class Progression {
 
     private static final int ARRAY_LENGTH = 10;
+    private static final int MAXSTEP = 10;
 
     public static void progressionGame() {
 
@@ -16,8 +17,8 @@ public class Progression {
         System.out.println("What number is missing in the progression? ");
 
         for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int beginning = Engine.makeRandomNumber(100);
-            int step = Engine.makeRandomNumber(10);
+            int beginning = Engine.makeRandomNumber(Engine.getRandomsize());
+            int step = Engine.makeRandomNumber(MAXSTEP);
             String[] numbers = makeProgression(beginning, step, ARRAY_LENGTH);
 
             int randomIndex = Engine.makeRandomNumber(numbers.length);
