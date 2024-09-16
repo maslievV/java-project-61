@@ -2,29 +2,29 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import  hexlet.code.Cli;
+import hexlet.code.Utils;
 
 public class Gcd {
 
     public static void gcdGame() {
 
-        String[] questionsToUser = new String[Engine.getNUMBEROFQUESTIONS()];
-        String[] correctAnswers = new String[Engine.getNUMBEROFQUESTIONS()];
+        String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-        Cli.greeting();
-        System.out.println("Find the greatest common divisor of given numbers.");
+        String description = "Find the greatest common divisor of given numbers.";
 
-        for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int firstNum = Engine.makeRandomNumber(Engine.getRandomsize());
-            int secondNum = Engine.makeRandomNumber(Engine.getRandomsize());
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+            int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
 
             questionsToUser[i] = String.format("%s %s", firstNum, secondNum);
-            correctAnswers[i] = String.valueOf(findGCD(firstNum, secondNum));
+            correctAnswers[i] = String.valueOf(calculateGCD(firstNum, secondNum));
 
         }
-        Engine.gameEngine(questionsToUser, correctAnswers);
+        Engine.run(questionsToUser, correctAnswers, description);
     }
 
-    public static int findGCD(int num1, int num2) {
+    public static int calculateGCD(int num1, int num2) {
         while (num1 != 0 && num2 != 0) {
             if (num1 > num2) {
                 num1 = num1 - num2;

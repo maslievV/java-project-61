@@ -2,21 +2,21 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Cli;
+import hexlet.code.Utils;
 
 public class Calc {
-    private static final int MAXOPERATOR = 3;
+    private static final int MAX_OPERATOR = 3;
 
     public static void calcGame() {
-        String[] userQuestions = new String[Engine.getNUMBEROFQUESTIONS()];
-        String[] correctAnswers = new String[Engine.getNUMBEROFQUESTIONS()];
+        String[] userQuestions = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-        Cli.greeting();
-        System.out.println("What is the result of the expression?");
+        String description = "What is the result of the expression?";
 
-        for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int firstNum = Engine.makeRandomNumber(Engine.getRandomsize());
-            int secondNum = Engine.makeRandomNumber(Engine.getRandomsize());
-            int operator = Engine.makeRandomNumber(MAXOPERATOR);
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+            int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+            int operator = Utils.makeRandomNumber(MAX_OPERATOR);
 
             switch (operator) {
                 case 0:
@@ -33,7 +33,6 @@ public class Calc {
             }
 
         }
-        Engine.gameEngine(userQuestions, correctAnswers);
-
+        Engine.run(userQuestions, correctAnswers, description);
     }
 }

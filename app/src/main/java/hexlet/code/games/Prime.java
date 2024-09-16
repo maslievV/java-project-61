@@ -2,26 +2,26 @@ package hexlet.code.games;
 
 import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Prime {
 
-    private static final int NUMBERRANGE = 100;
+    private static final int NUMBER_RANGE = 100;
 
     public static void primeGame() {
-        String[] questionsToUser = new String[Engine.getNUMBEROFQUESTIONS()];
-        String[] correctAnswers = new String[Engine.getNUMBEROFQUESTIONS()];
+        String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-        Cli.greeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        for (int i = 0; i < Engine.getNUMBEROFQUESTIONS(); i++) {
-            int primeNUmber = Engine.makeRandomNumber(NUMBERRANGE);
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            int primeNUmber = Utils.makeRandomNumber(NUMBER_RANGE);
 
             questionsToUser[i] = String.valueOf(primeNUmber);
             correctAnswers[i] = checkPrime(primeNUmber);
         }
-        Engine.gameEngine(questionsToUser, correctAnswers);
+        Engine.run(questionsToUser, correctAnswers, description);
     }
 
     public static String checkPrime(int num) {

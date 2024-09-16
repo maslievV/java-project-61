@@ -4,42 +4,32 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static final int NUMBEROFQUESTIONS = 3;
-    private static final int RANDOMSIZE = 100;
+    public static final int NUMBER_OF_QUESTIONS = 3;
+    public static final int RANDOM_SIZE = 100;
 
-    public static void gameEngine(String[] userQuestions, String[] rightAnswers) {
+    public static void run(String[] userQuestions, String[] rightAnswers, String description) {
         Scanner scanner = new Scanner(System.in);
-        int count = 0;
+        System.out.println("Welcome to the Brain Games!\nMay I have your name? ");
+        String userName = scanner.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
-        for (int i = 0; i < NUMBEROFQUESTIONS; i++) {
+        System.out.println(description);
+
+        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
             System.out.println("Question: " + userQuestions[i]);
             System.out.print("Your answer: ");
             String response = scanner.nextLine();
 
             if (rightAnswers[i].equals(response)) {
                 System.out.println("Correct!");
-                count++;
-                if (count == NUMBEROFQUESTIONS) {
-                    System.out.println("Congratulations, " + Cli.getUserName() + "!");
-                }
             } else {
                 System.out.println("'"
                         + response + "'" + " is wrong answer ;(. Correct answer was " + "'"
                         + rightAnswers[i] + "'.");
-                System.out.print("Let's try again, " + Cli.getUserName() + "!");
+                System.out.print("Let's try again, " + userName + "!");
                 break;
             }
         }
+        System.out.println("Congratulations, " + userName + "!");
     }
-    public static int makeRandomNumber(int num) {
-        return (int) (Math.random() * num);
-    }
-
-    public static int getNUMBEROFQUESTIONS() {
-        return NUMBEROFQUESTIONS;
-    }
-    public static int getRandomsize() {
-        return RANDOMSIZE;
-    }
-
 }
