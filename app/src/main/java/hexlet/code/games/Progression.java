@@ -5,34 +5,37 @@ import hexlet.code.Utils;
 
 public class Progression {
 
-    private static final int ARRAY_LENGTH = 10;
-    private static final int MAX_STEP = 10;
+    public static final int ARRAY_LENGTH = 10;
+    public static final int MAX_STEP = 10;
 
     public static void startProgression() {
-
-        String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
-
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
         String description = "What number is missing in the progression? ";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int beginning = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-            int step = Utils.makeRandomNumber(MAX_STEP);
-            String[] numbers = generateProgression(beginning, step, ARRAY_LENGTH);
-
-            int randomIndex = Utils.makeRandomNumber(numbers.length);
-            String missedNumber = numbers[randomIndex];
-            numbers[randomIndex] = "..";
-
-            questionsToUser[i] = String.join(" ", numbers);
-            correctAnswers[i] = missedNumber;
+            questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsToUser, correctAnswers, description);
+        Engine.run(questionsAndAnswers, description);
 
     }
 
-    public static String[] generateProgression(int start, int n, int arrayLength) {
+    public static String[] generateRoundData() {
+        String[] gameData = new String[Engine.ELEMENTS_COUNT];
+        int beginning = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+        int step = Utils.makeRandomNumber(MAX_STEP);
+        String[] numbers = generateProgression(beginning, step, ARRAY_LENGTH);
 
+        int randomIndex = Utils.makeRandomNumber(numbers.length);
+        String missedNumber = numbers[randomIndex];
+        numbers[randomIndex] = "..";
+
+        gameData[Engine.QUESTION_NUMBER] = String.join(" ", numbers);
+        gameData[Engine.ANSWER_NUMBER] = missedNumber;
+
+        return gameData;
+    }
+
+    public static String[] generateProgression(int start, int n, int arrayLength) {
         String[] arrayNum = new String[arrayLength];
         arrayNum[0] = String.valueOf(start);
 

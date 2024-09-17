@@ -4,23 +4,29 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
-    private static final int MAX_OPERATOR = 3;
+    public static final int MAX_OPERATOR = 3;
 
     public static void startCalc() {
-        String[] userQuestions = new String[Engine.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
-
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
         String description = "What is the result of the expression?";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-            int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-            int operator = Utils.makeRandomNumber(MAX_OPERATOR);
-
-            userQuestions[i] = makeQuestion(operator, firstNum, secondNum);
-            correctAnswers[i] = calculateResult(operator, firstNum, secondNum);
+            questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(userQuestions, correctAnswers, description);
+        Engine.run(questionsAndAnswers, description);
+    }
+
+    public static String[] generateRoundData() {
+        String[] gameData = new String[Engine.ELEMENTS_COUNT];
+
+        int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+        int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+        int operator = Utils.makeRandomNumber(MAX_OPERATOR);
+
+        gameData[Engine.QUESTION_NUMBER] = makeQuestion(operator, firstNum, secondNum);
+        gameData[Engine.ANSWER_NUMBER] = calculateResult(operator, firstNum, secondNum);
+
+        return gameData;
     }
 
     public static String calculateResult(int operation, int num1, int num2)  {

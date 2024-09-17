@@ -6,21 +6,24 @@ import hexlet.code.Utils;
 public class Gcd {
 
     public static void startGCD() {
-
-        String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
-
+        String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
         String description = "Find the greatest common divisor of given numbers.";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-            int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-
-            questionsToUser[i] = String.format("%s %s", firstNum, secondNum);
-            correctAnswers[i] = String.valueOf(calculateGCD(firstNum, secondNum));
-
+            questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsToUser, correctAnswers, description);
+        Engine.run(questionsAndAnswers, description);
+    }
+
+    public static String[] generateRoundData() {
+        String[] gameData = new String[Engine.ELEMENTS_COUNT];
+        int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+        int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+
+        gameData[Engine.QUESTION_NUMBER] = String.format("%s %s", firstNum, secondNum);
+        gameData[Engine.ANSWER_NUMBER] = Integer.toString(calculateGCD(firstNum, secondNum));
+
+        return gameData;
     }
 
     public static int calculateGCD(int num1, int num2) {
