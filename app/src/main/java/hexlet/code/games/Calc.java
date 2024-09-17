@@ -8,8 +8,6 @@ public class Calc {
     public static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void startCalc() {
-
-        System.out.println("What is the result of the expression?");
         Engine.run(generateQuestions(), DESCRIPTION);
     }
 
