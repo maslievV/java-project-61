@@ -27,7 +27,7 @@ public class Engine {
                         + response + "'" + " is wrong answer ;(. Correct answer was " + "'"
                         + rightAnswers[i] + "'.");
                 System.out.print("Let's try again, " + userName + "!");
-                break;
+                return;
             }
         }
         System.out.println("Congratulations, " + userName + "!");
