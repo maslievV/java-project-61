@@ -8,12 +8,12 @@ public class Calc {
 
     public static void startCalc() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-        String description = "What is the result of the expression?";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsAndAnswers, description);
+        System.out.println("What is the result of the expression?");
+        Engine.run(questionsAndAnswers);
     }
 
     public static String[] generateRoundData() {

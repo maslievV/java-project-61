@@ -7,12 +7,12 @@ public class Gcd {
 
     public static void startGCD() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-        String description = "Find the greatest common divisor of given numbers.";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsAndAnswers, description);
+        System.out.println("Find the greatest common divisor of given numbers.");
+        Engine.run(questionsAndAnswers);
     }
 
     public static String[] generateRoundData() {

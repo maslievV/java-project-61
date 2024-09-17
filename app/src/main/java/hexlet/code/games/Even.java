@@ -7,12 +7,12 @@ public class Even {
 
     public static void startEven() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-        String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsAndAnswers, description);
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        Engine.run(questionsAndAnswers);
     }
 
     public static String[] generateRoundData() {

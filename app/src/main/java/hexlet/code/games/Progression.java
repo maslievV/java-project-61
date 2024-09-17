@@ -10,12 +10,12 @@ public class Progression {
 
     public static void startProgression() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-        String description = "What number is missing in the progression? ";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsAndAnswers, description);
+        System.out.println("What number is missing in the progression? ");
+        Engine.run(questionsAndAnswers);
 
     }
 

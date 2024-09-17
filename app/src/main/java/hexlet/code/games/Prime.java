@@ -10,12 +10,12 @@ public class Prime {
 
     public static void startPrime() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-        String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        Engine.run(questionsAndAnswers, description);
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Engine.run(questionsAndAnswers);
     }
 
     public static String[] generateRoundData() {
