@@ -18,17 +18,17 @@ public class Engine {
 
         System.out.println(description);
 
-        for (int i = 0; i < NUMBER_OF_QUESTIONS; i++) {
-            System.out.println("Question: " + questionsAndAnswers[QUESTION_NUMBER]);
+        for (String[] questionAndAnswer: questionsAndAnswers) {
+            System.out.println("Question: " + questionAndAnswer[QUESTION_NUMBER]);
             System.out.print("Your answer: ");
             String response = scanner.nextLine();
 
-            if (questionsAndAnswers[ANSWER_NUMBER].equals(response)) {
+            if (questionAndAnswer[ANSWER_NUMBER].equals(response)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'"
                         + response + "'" + " is wrong answer ;(. Correct answer was " + "'"
-                        + questionsAndAnswers[ANSWER_NUMBER] + "'.");
+                        + questionAndAnswer[ANSWER_NUMBER] + "'.");
                 System.out.print("Let's try again, " + userName + "!");
                 return;
             }

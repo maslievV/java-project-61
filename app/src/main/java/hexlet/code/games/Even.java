@@ -17,7 +17,7 @@ public class Even {
 
     public static String[] generateRoundData() {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];
-        int randomNum = Utils.makeRandomNumber(Engine.NUMBER_OF_QUESTIONS);
+        int randomNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
         gameData[Engine.QUESTION_NUMBER] = Integer.toString(randomNum);
         gameData[Engine.ANSWER_NUMBER] = checkEven(randomNum);
 
