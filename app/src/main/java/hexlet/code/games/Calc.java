@@ -25,7 +25,7 @@ public class Calc {
 
     public static String calculateResult(int operation, int num1, int num2)  {
         int result;
-        switch(operation) {
+        switch (operation) {
             case 0:
                 result = num1 + num2;
                 break;
