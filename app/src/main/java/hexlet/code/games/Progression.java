@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -9,7 +8,7 @@ public class Progression {
     private static final int ARRAY_LENGTH = 10;
     private static final int MAX_STEP = 10;
 
-    public static void progressionGame() {
+    public static void startProgression() {
 
         String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];

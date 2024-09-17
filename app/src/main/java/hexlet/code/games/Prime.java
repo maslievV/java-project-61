@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -9,7 +8,7 @@ public class Prime {
 
     private static final int NUMBER_RANGE = 100;
 
-    public static void primeGame() {
+    public static void startPrime() {
         String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 

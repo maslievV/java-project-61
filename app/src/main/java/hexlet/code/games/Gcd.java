@@ -1,12 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import  hexlet.code.Cli;
 import hexlet.code.Utils;
 
 public class Gcd {
 
-    public static void gcdGame() {
+    public static void startGCD() {
 
         String[] questionsToUser = new String[Engine.NUMBER_OF_QUESTIONS];
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];

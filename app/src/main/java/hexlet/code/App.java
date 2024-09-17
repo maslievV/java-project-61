@@ -36,22 +36,22 @@ public class App {
         System.out.println("Your choice: " + gameChoice + "\n");
         switch (gameChoice) {
             case GREET:
-                Cli.greeting();
+                Cli.startGreeting();
                 break;
             case EVEN:
-                Even.evenGame();
+                Even.startEven();
                 break;
             case CALC:
-                Calc.calcGame();
+                Calc.startCalc();
                 break;
             case GCD:
-                Gcd.gcdGame();
+                Gcd.startGCD();
                 break;
             case PROGRESSION:
-                Progression.progressionGame();
+                Progression.startProgression();
                 break;
             case PRIME:
-                Prime.primeGame();
+                Prime.startPrime();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value " + gameChoice);
