@@ -14,13 +14,13 @@ public class Calc {
     }
 
     public static String[][] generateQuestions() {
-        String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
+        String[][] generated = new String[Engine.NUMBER_OF_QUESTIONS][];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            questionsAndAnswers[i] = generateRoundData();
+            generated[i] = generateRoundData();
         }
 
-        return questionsAndAnswers;
+        return generated;
     }
 
     public static String[] generateRoundData() {
