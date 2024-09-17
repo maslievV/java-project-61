@@ -10,11 +10,13 @@ public class Engine {
     public static final int ELEMENTS_COUNT = 2;
     public static final int RANDOM_SIZE = 100;
 
-    public static void run(String[][] questionsAndAnswers) {
+    public static void run(String[][] questionsAndAnswers, String intro) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name? ");
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
+
+        System.out.println(intro);
 
         for (String[] questionAndAnswer: questionsAndAnswers) {
             System.out.println("Question: " + questionAndAnswer[QUESTION_NUMBER]);

@@ -5,14 +5,20 @@ import hexlet.code.Utils;
 
 public class Gcd {
 
+    public static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
+
     public static void startGCD() {
+        Engine.run(generateQuestions(), DESCRIPTION);
+    }
+
+    public static String[][] generateQuestions() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        System.out.println("Find the greatest common divisor of given numbers.");
-        Engine.run(questionsAndAnswers);
+
+        return questionsAndAnswers;
     }
 
     public static String[] generateRoundData() {

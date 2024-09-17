@@ -5,15 +5,23 @@ import hexlet.code.Utils;
 
 public class Even {
 
+    public static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
     public static void startEven() {
+
+        Engine.run(generateQuestions(), DESCRIPTION);
+    }
+
+    public static String[][] generateQuestions() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        Engine.run(questionsAndAnswers);
+
+        return questionsAndAnswers;
     }
+
 
     public static String[] generateRoundData() {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];

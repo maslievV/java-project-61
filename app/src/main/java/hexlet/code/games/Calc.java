@@ -5,15 +5,22 @@ import hexlet.code.Utils;
 
 public class Calc {
     public static final int MAX_OPERATOR = 3;
+    public static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void startCalc() {
+
+        System.out.println("What is the result of the expression?");
+        Engine.run(generateQuestions(), DESCRIPTION);
+    }
+
+    public static String[][] generateQuestions() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        System.out.println("What is the result of the expression?");
-        Engine.run(questionsAndAnswers);
+
+        return questionsAndAnswers;
     }
 
     public static String[] generateRoundData() {

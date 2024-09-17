@@ -7,15 +7,20 @@ import hexlet.code.Utils;
 public class Prime {
 
     public static final int NUMBER_RANGE = 100;
+    public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startPrime() {
+        Engine.run(generateQuestions(), DESCRIPTION);
+    }
+
+    public static String[][] generateQuestions() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        Engine.run(questionsAndAnswers);
+
+        return questionsAndAnswers;
     }
 
     public static String[] generateRoundData() {

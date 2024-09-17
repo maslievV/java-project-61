@@ -7,16 +7,20 @@ public class Progression {
 
     public static final int ARRAY_LENGTH = 10;
     public static final int MAX_STEP = 10;
+    public static final String DESCRIPTION = "What number is missing in the progression? ";
 
     public static void startProgression() {
+        Engine.run(generateQuestions(), DESCRIPTION);
+    }
+
+    public static String[][] generateQuestions() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-        System.out.println("What number is missing in the progression? ");
-        Engine.run(questionsAndAnswers);
 
+        return questionsAndAnswers;
     }
 
     public static String[] generateRoundData() {
