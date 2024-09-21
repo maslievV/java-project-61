@@ -39,19 +39,19 @@ public class App {
                 Cli.startGreeting();
                 break;
             case EVEN:
-                Even.startEven();
+                Even.start();
                 break;
             case CALC:
-                Calc.startCalc();
+                Calc.start();
                 break;
             case GCD:
-                Gcd.startGCD();
+                Gcd.start();
                 break;
             case PROGRESSION:
-                Progression.startProgression();
+                Progression.start();
                 break;
             case PRIME:
-                Prime.startPrime();
+                Prime.start();
                 break;
             default:
                 throw new IllegalStateException("Unexpected value " + gameChoice);

@@ -9,18 +9,12 @@ public class Prime {
     public static final int NUMBER_RANGE = 100;
     public static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void startPrime() {
-        Engine.run(generateQuestions(), DESCRIPTION);
-    }
-
-    public static String[][] generateQuestions() {
+    public static void start() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-
-        return questionsAndAnswers;
+        Engine.run(questionsAndAnswers, DESCRIPTION);
     }
 
     public static String[] generateRoundData() {
@@ -28,12 +22,12 @@ public class Prime {
         int primeNUmber = Utils.makeRandomNumber(NUMBER_RANGE);
 
         gameData[Engine.QUESTION_NUMBER] = Integer.toString(primeNUmber);
-        gameData[Engine.ANSWER_NUMBER] = checkPrime(primeNUmber);
+        gameData[Engine.ANSWER_NUMBER] = Boolean.toString(isPrime(primeNUmber));
 
         return gameData;
     }
 
-    public static String checkPrime(int num) {
+    public static boolean isPrime(int num) {
         int count = 0;
 
         for (int i = 1; i <= num; i++) {
@@ -41,7 +35,7 @@ public class Prime {
                 count++;
             }
         }
-        return (count == 2) ? "yes" : "no";
+        return (count == 2);
     }
 
 }

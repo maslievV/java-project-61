@@ -7,24 +7,18 @@ public class Gcd {
 
     public static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
-    public static void startGCD() {
-        Engine.run(generateQuestions(), DESCRIPTION);
-    }
-
-    public static String[][] generateQuestions() {
+    public static void start() {
         String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             questionsAndAnswers[i] = generateRoundData();
         }
-
-        return questionsAndAnswers;
+        Engine.run(questionsAndAnswers, DESCRIPTION);
     }
 
     public static String[] generateRoundData() {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];
-        int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-        int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
+        int firstNum = Utils.makeRandomNumber();
+        int secondNum = Utils.makeRandomNumber();
 
         gameData[Engine.QUESTION_NUMBER] = String.format("%s %s", firstNum, secondNum);
         gameData[Engine.ANSWER_NUMBER] = Integer.toString(calculateGCD(firstNum, secondNum));

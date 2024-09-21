@@ -4,11 +4,15 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
-    public static final int MAX_OPERATOR = 3;
+    public static final char[] OPERATORS = {'+', '-', '*'};
     public static final String DESCRIPTION = "What is the result of the expression?";
 
-    public static void startCalc() {
-        Engine.run(generateQuestions(), DESCRIPTION);
+    public static void start() {
+        String[][] generated = new String[Engine.NUMBER_OF_QUESTIONS][];
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
+            generated[i] = generateRoundData();
+        }
+        Engine.run(generated, DESCRIPTION);
     }
 
     public static String[][] generateQuestions() {
@@ -24,9 +28,9 @@ public class Calc {
     public static String[] generateRoundData() {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];
 
-        int firstNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-        int secondNum = Utils.makeRandomNumber(Engine.RANDOM_SIZE);
-        int operator = Utils.makeRandomNumber(MAX_OPERATOR);
+        int firstNum = Utils.makeRandomNumber();
+        int secondNum = Utils.makeRandomNumber();
+        int operator = Utils.makeRandomNumber(Utils.makeRandomNumber(OPERATORS.length));
 
         gameData[Engine.QUESTION_NUMBER] = makeQuestion(operator, firstNum, secondNum);
         gameData[Engine.ANSWER_NUMBER] = calculateResult(operator, firstNum, secondNum);
@@ -43,8 +47,11 @@ public class Calc {
             case 1:
                 result = num1 - num2;
                 break;
-            default:
+            case 2:
                 result = num1 * num2;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value " + operation);
         }
         return Integer.toString(result);
     }
@@ -53,13 +60,13 @@ public class Calc {
         String question;
         switch (operation) {
             case 0:
-                question = String.valueOf(num1 + " + " + num2);
+                question = String.valueOf(num1 + OPERATORS[0] + num2);
                 break;
             case 1:
-                question = String.valueOf(num1 + " - " + num2);
+                question = String.valueOf(num1 + OPERATORS[1] + num2);
                 break;
             default:
-                question = String.valueOf(num1 + " * " + num2);
+                question = String.valueOf(num1 + OPERATORS[2] + num2);
         }
         return question;
     }

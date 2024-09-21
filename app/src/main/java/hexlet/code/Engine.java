@@ -8,7 +8,6 @@ public class Engine {
     public static final int QUESTION_NUMBER = 0;
     public static final int ANSWER_NUMBER = 1;
     public static final int ELEMENTS_COUNT = 2;
-    public static final int RANDOM_SIZE = 100;
 
     public static void run(String[][] questionsAndAnswers, String intro) {
         Scanner scanner = new Scanner(System.in);
