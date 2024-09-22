@@ -67,6 +67,7 @@ public class Calc {
                 break;
             case 2:
                 question = "%d %c %d".formatted(num1, OPERATORS[2], num2);
+                break;
             default:
                 throw new IllegalStateException("Unexpected value: " + operation);
         }
