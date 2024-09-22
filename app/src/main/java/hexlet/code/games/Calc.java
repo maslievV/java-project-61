@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
-    public static final char[] OPERATORS = {'+', '-', '*'};
+    public static final char[] OPERATORS = new char[]{'+', '-', '*'};
     public static final String DESCRIPTION = "What is the result of the expression?";
 
     public static void start() {
@@ -30,7 +30,7 @@ public class Calc {
 
         int firstNum = Utils.makeRandomNumber();
         int secondNum = Utils.makeRandomNumber();
-        int operator = Utils.makeRandomNumber(Utils.makeRandomNumber(OPERATORS.length));
+        int operator = Utils.makeRandomNumber(OPERATORS.length);
 
         gameData[Engine.QUESTION_NUMBER] = makeQuestion(operator, firstNum, secondNum);
         gameData[Engine.ANSWER_NUMBER] = calculateResult(operator, firstNum, secondNum);
@@ -60,13 +60,15 @@ public class Calc {
         String question;
         switch (operation) {
             case 0:
-                question = String.valueOf(num1 + OPERATORS[0] + num2);
+                question = "%d %c %d".formatted(num1, OPERATORS[0], num2);
                 break;
             case 1:
-                question = String.valueOf(num1 + OPERATORS[1] + num2);
+                question = "%d %c %d".formatted(num1, OPERATORS[1], num2);
                 break;
+            case 2:
+                question = "%d %c %d".formatted(num1, OPERATORS[2], num2);
             default:
-                question = String.valueOf(num1 + OPERATORS[2] + num2);
+                throw new IllegalStateException("Unexpected value: " + operation);
         }
         return question;
     }
