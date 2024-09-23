@@ -15,17 +15,6 @@ public class Even {
         Engine.run(questionsAndAnswers, DESCRIPTION);
     }
 
-    public static String[][] generateQuestions() {
-        String[][] questionsAndAnswers = new String[Engine.NUMBER_OF_QUESTIONS][];
-
-        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            questionsAndAnswers[i] = generateRoundData();
-        }
-
-        return questionsAndAnswers;
-    }
-
-
     public static String[] generateRoundData() {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];
         int randomNum = Utils.makeRandomNumber();

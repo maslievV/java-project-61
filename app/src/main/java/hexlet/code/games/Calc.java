@@ -15,16 +15,6 @@ public class Calc {
         Engine.run(generated, DESCRIPTION);
     }
 
-    public static String[][] generateQuestions() {
-        String[][] generated = new String[Engine.NUMBER_OF_QUESTIONS][];
-
-        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            generated[i] = generateRoundData();
-        }
-
-        return generated;
-    }
-
     public static String[] generateRoundData() {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];
 
