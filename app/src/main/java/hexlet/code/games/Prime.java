@@ -22,7 +22,7 @@ public class Prime {
         int primeNUmber = Utils.makeRandomNumber(NUMBER_RANGE);
 
         gameData[Engine.QUESTION_NUMBER] = Integer.toString(primeNUmber);
-        gameData[Engine.ANSWER_NUMBER] = Boolean.toString(isPrime(primeNUmber));
+        gameData[Engine.ANSWER_NUMBER] = isPrime(primeNUmber) ? "yes" : "no";
 
         return gameData;
     }

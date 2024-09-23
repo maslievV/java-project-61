@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 
 public class App {
+    private static final int EXIT = 0;
+
     private static final int GREET = 1;
 
     private static final int EVEN = 2;
@@ -52,6 +54,9 @@ public class App {
                 break;
             case PRIME:
                 Prime.start();
+                break;
+            case EXIT:
+                System.out.println("You left the game, come again!");
                 break;
             default:
                 throw new IllegalStateException("Unexpected value " + gameChoice);
