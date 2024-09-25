@@ -19,12 +19,12 @@ public class Even {
         String[] gameData = new String[Engine.ELEMENTS_COUNT];
         int randomNum = Utils.makeRandomNumber();
         gameData[Engine.QUESTION_NUMBER] = Integer.toString(randomNum);
-        gameData[Engine.ANSWER_NUMBER] = checkEven(randomNum);
+        gameData[Engine.ANSWER_NUMBER] = isEven(randomNum) ? "yes" : "no";
 
         return gameData;
     }
 
-    public static String checkEven(int num) {
-        return num % 2 == 0 ? "yes" : "no";
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
     }
 }

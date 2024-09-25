@@ -22,7 +22,7 @@ public class Engine {
             System.out.print("Your answer: ");
             String response = scanner.nextLine();
 
-            if (questionAndAnswer[ANSWER_NUMBER].equals(response)) {
+            if (questionAndAnswer[ANSWER_NUMBER].equalsIgnoreCase(response)) {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'"

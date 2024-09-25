@@ -23,44 +23,21 @@ public class Calc {
         int operator = Utils.makeRandomNumber(OPERATORS.length);
 
         gameData[Engine.QUESTION_NUMBER] = makeQuestion(operator, firstNum, secondNum);
-        gameData[Engine.ANSWER_NUMBER] = calculateResult(operator, firstNum, secondNum);
+        gameData[Engine.ANSWER_NUMBER] = Integer.toString(calculateResult(operator, firstNum, secondNum));
 
         return gameData;
     }
 
-    public static String calculateResult(int operation, int num1, int num2)  {
-        int result;
-        switch (operation) {
-            case 0:
-                result = num1 + num2;
-                break;
-            case 1:
-                result = num1 - num2;
-                break;
-            case 2:
-                result = num1 * num2;
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value " + operation);
-        }
-        return Integer.toString(result);
+    public static int calculateResult(int operation, int num1, int num2)  {
+        return switch (operation) {
+            case 0 -> num1 + num2;
+            case 1 -> num1 - num2;
+            case 2 -> num1 * num2;
+            default -> throw new IllegalStateException("Unexpected value " + operation);
+        };
     }
 
     public static String makeQuestion(int operation, int num1, int num2) {
-        String question;
-        switch (operation) {
-            case 0:
-                question = "%d %c %d".formatted(num1, OPERATORS[0], num2);
-                break;
-            case 1:
-                question = "%d %c %d".formatted(num1, OPERATORS[1], num2);
-                break;
-            case 2:
-                question = "%d %c %d".formatted(num1, OPERATORS[2], num2);
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + operation);
-        }
-        return question;
+        return "%d %c %d".formatted(num1, OPERATORS[operation], num2);
     }
 }
