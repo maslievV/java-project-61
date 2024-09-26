@@ -23,17 +23,17 @@ public class Calc {
         int operator = Utils.makeRandomNumber(OPERATORS.length);
 
         gameData[Engine.QUESTION_NUMBER] = makeQuestion(operator, firstNum, secondNum);
-        gameData[Engine.ANSWER_NUMBER] = Integer.toString(calculateResult(operator, firstNum, secondNum));
+        gameData[Engine.ANSWER_NUMBER] = Integer.toString(calculateResult(OPERATORS[operator], firstNum, secondNum));
 
         return gameData;
     }
 
-    public static int calculateResult(int operation, int num1, int num2)  {
-        return switch (operation) {
-            case 0 -> num1 + num2;
-            case 1 -> num1 - num2;
-            case 2 -> num1 * num2;
-            default -> throw new IllegalStateException("Unexpected value " + operation);
+    public static int calculateResult(char operator, int num1, int num2)  {
+        return switch (operator) {
+            case '+' -> num1 + num2;
+            case '-' -> num1 - num2;
+            case '*' -> num1 * num2;
+            default -> throw new IllegalStateException("Unexpected value " + operator);
         };
     }
 
